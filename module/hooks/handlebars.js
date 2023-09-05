@@ -12,6 +12,14 @@ export default function () {
             return game.user.isGM
         })
 
+        Handlebars.registerHelper("itemGroups", function (type) {
+            var result = {...DEGENESIS["itemGroups"]}
+            for (const [key, value] of Object.entries(result)) {
+                result[key].shown = value.itemTypes.includes(type)
+            }
+            return result
+        })
+
         Handlebars.registerHelper("config", function (key) {
             return DEGENESIS[key]
         })

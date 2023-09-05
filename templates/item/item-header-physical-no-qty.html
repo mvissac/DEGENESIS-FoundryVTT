@@ -12,13 +12,11 @@
         <div class="sheet-field">
             <span class="field-name">{{localize "DGNS.Group"}}: </span>
             <select name="data.group" data-dtype="String">
-                <option value="{{g}}">{{group}}</option>
                 {{#select data.group}}
-                {{#each (config "weaponGroups") as |group g|}}
-                <option value="{{g}}">{{group}}</option>
-                {{/each}}
-                {{#each (config "equipmentGroups") as |group g|}}
-                <option value="{{g}}">{{group}}</option>
+                {{#each (itemGroups item.type) as |group g|}}
+                    {{#if group.shown}}
+                        <option value="{{g}}">{{localize group.label}}</option>
+                    {{/if}}
                 {{/each}}
                 {{/select}}
             </select>

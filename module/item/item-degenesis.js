@@ -225,7 +225,7 @@ export class DegenesisItem extends Item {
 
         if (this.qualities.find(q => q.name == "special") && getProperty(this, "flags.degenesis.specialty"))
             text = text.concat(`<br><b>${game.i18n.localize("DGNS.Specialty").toUpperCase()}</b>: ${this.flags.degenesis.specialty}`)
-        tags.push(DEGENESIS.weaponGroups[data.group])
+        tags.push(game.i18n.localize(DEGENESIS.itemGroups[data.group].label))
         /*tags.push(`TECH: ${DEGENESIS.techValues[data.tech]}`)*/
         /*tags.push(`SLOTS: ${data.slots.used}/${data.slots.total}`)*/
         tags.push(`${game.i18n.localize("DGNS.Handling")}: ${data.handling}D`)
@@ -270,7 +270,7 @@ export class DegenesisItem extends Item {
         let tags = [];
         let data = foundry.utils.deepClone(this.system);
         let text = `${this.description}` + `<b>${game.i18n.localize("DGNS.Effect").toUpperCase()}</b>: ${data.effect}`;
-        tags.push(`${game.i18n.localize("DGNS.Group")}: ${DEGENESIS.equipmentGroups[data.group]}`)
+        tags.push(`${game.i18n.localize("DGNS.Group")}: ${game.i18n.localize(DEGENESIS.itemGroups[data.group].label)}`)
         tags.push(`${game.i18n.localize("DGNS.Value")}: ${data.value}`)
         if (data.cult) { tags.push(`${game.i18n.localize("DGNS.Cult")}: ${data.cult}`) };
         if (data.resources) { tags.push(`${game.i18n.localize("DGNS.Resources")}: ${data.resources}`) };
@@ -361,14 +361,13 @@ export class DegenesisItem extends Item {
     // @@@@@@@@ CALCULATION GETTERS @@@@@@@
     get isMelee() {
         if (this.system.type = "weapon")
-            return DEGENESIS.weaponGroupSkill[this.group] == "projectiles" || this.group == "sonic" ? false : true
+            return DEGENESIS.itemGroups[this.group].skill == "projectiles" || this.group == "sonic" ? false : true
     }
 
     get isRanged() {
         if (this.system.type = "weapon")
-            return DEGENESIS.weaponGroupSkill[this.group] == "projectiles" && this.group != "sonic"
+            return DEGENESIS.itemGroups[this.group].skill == "projectiles" && this.group != "sonic"
     }
-
 
     get isSonic() {
         if (this.system.type = "weapon")
@@ -380,7 +379,7 @@ export class DegenesisItem extends Item {
     }
 
     get skill() {
-        return this.primarySkill || DEGENESIS.weaponGroupSkill[this.group]
+        return this.primarySkill || DEGENESIS.itemGroups[this.group].skill
     }
 
     get ownerSkill() {

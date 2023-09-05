@@ -235,56 +235,182 @@ DEGENESIS.modifyActions = {
 
 DEGENESIS.noType = ["movement", "armor", "damage", "p_defense"];
 
-DEGENESIS.weaponGroups = {
-  brawl: "DGNS.Brawl",
-  armedMelee: "DGNS.ArmedMelee",
-  thrown: "DGNS.ThrownWeapons",
-  projectiles: "DGNS.Projectiles",
-  handguns: "DGNS.Handguns",
-  rifles: "DGNS.Rifles",
-  heavy: "DGNS.HeavyWeapons",
-  explosives: "DGNS.Explosives",
-  sonic: "DGNS.SonicWeapons",
-};
-
-DEGENESIS.equipmentGroups = {
-  "getting food": "DGNS.GettingFood",
-  traps: "DGNS.Traps",
-  sourcesOfLight: "DGNS.SourceOfLightFire",
-  orienteeringTracking: "DGNS.OrienteeringTracking",
-  climbing: "DGNS.Climbing",
-  overnight: "DGNS.Overnight",
-  inTheShadows: "DGNS.InTheShadows",
-  gasMasks: "DGNS.GazMasks",
-  survivalGear: "DGNS.SurvivalGear",
-  technology: "DGNS.Technology",
-  sunDiscs: "DGNS.SunDiscs",
-  chroniclerSuitModules: "DGNS.ChroniclerSuitModules",
-  heavyDutyModules: "DGNS.HeavyDutyModules",
-  communication: "DGNS.Communication",
-  energyManagement: "DGNS.EnergyManagement",
-  medicalEquipment: "DGNS.MedicalEquipment",
-  pharmaceutics: "DGNS.Pharmaceutics",
-  elysianOils: "DGNS.ElysianOils",
-  psychonauticRemains: "DGNS.PsychonauticRemains",
-  huntingPsychonauts: "DGNS.HuntingPsychonauts",
-  commonPrimalism: "DGNS.CommonPrimalism",
-  talismansInsignia: "DGNS.TalismansInsignia",
-  scrap: "DGNS.Scrap",
-  other: "DGNS.Other",
-  transportation: "DGNS.Transportation",
-};
-
-DEGENESIS.weaponGroupSkill = {
-  brawl: "brawl",
-  armedMelee: "melee",
-  thrown: "projectiles",
-  projectiles: "projectiles",
-  handguns: "projectiles",
-  rifles: "projectiles",
-  heavy: "projectiles",
-  explosives: "projectiles",
-  sonic: "engineering",
+DEGENESIS.itemGroups = {
+  brawl: {
+    label: "DGNS.Brawl",
+    skill: "brawl",
+    itemTypes: ["weapon", "armor", "shield"]
+  },
+  armedMelee: {
+    label: "DGNS.ArmedMelee",
+    skill: "melee",
+    itemTypes: ["weapon"]
+  },
+  thrown: {
+    label: "DGNS.ThrownWeapons",
+    skill: "projectiles",
+    itemTypes: ["weapon"]
+  },
+  projectiles: {
+    label: "DGNS.Projectiles",
+    skill: "projectiles",
+    itemTypes: ["weapon"]
+  },
+  handguns: {
+    label: "DGNS.Handguns",
+    skill: "projectiles",
+    itemTypes: ["weapon"]
+  },
+  rifles: {
+    label: "DGNS.Rifles",
+    skill: "projectiles",
+    itemTypes: ["weapon"]
+  },
+  heavy: {
+    label: "DGNS.HeavyWeapons",
+    skill: "projectiles",
+    itemTypes: ["weapon"]
+  },
+  explosives: {
+    label: "DGNS.Explosives",
+    skill: "projectiles",
+    itemTypes: ["weapon"]
+  },
+  sonic: {
+    label: "DGNS.SonicWeapons",
+    skill: "engineering",
+    itemTypes: ["weapon"]
+  },
+  ammunition: {
+    label: "DGNS.Ammunition",
+    skill: "",
+    itemTypes: ["ammunition"]
+  },
+  "getting food": {
+    label: "DGNS.GettingFood",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  traps: {
+    label: "DGNS.Traps",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  sourcesOfLight: {
+    label: "DGNS.SourceOfLightFire",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  orienteeringTracking: {
+    label: "DGNS.OrienteeringTracking",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  climbing: {
+    label: "DGNS.Climbing",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  overnight: {
+    label: "DGNS.Overnight",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  inTheShadows: {
+    label: "DGNS.InTheShadows",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  gasMasks: {
+    label: "DGNS.GazMasks",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  survivalGear: {
+    label: "DGNS.SurvivalGear",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  technology: {
+    label: "DGNS.Technology",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  sunDiscs: {
+    label: "DGNS.SunDiscs",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  chroniclerSuitModules: {
+    label: "DGNS.ChroniclerSuitModules",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  heavyDutyModules: {
+    label: "DGNS.HeavyDutyModules",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  communication: {
+    label: "DGNS.Communication",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  energyManagement: {
+    label: "DGNS.EnergyManagement",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  medicalEquipment: {
+    label: "DGNS.MedicalEquipment",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  pharmaceutics: {
+    label: "DGNS.Pharmaceutics",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  elysianOils: {
+    label: "DGNS.ElysianOils",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  psychonauticRemains: {
+    label: "DGNS.PsychonauticRemains",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  huntingPsychonauts: {
+    label: "DGNS.HuntingPsychonauts",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  commonPrimalism: {
+    label: "DGNS.CommonPrimalism",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  talismansInsignia: {
+    label: "DGNS.TalismansInsignia",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  scrap: {
+    label: "DGNS.Scrap",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  other: {
+    label: "DGNS.Other",
+    skill: "",
+    itemTypes: ["equipment"]
+  },
+  transportation: {
+    label: "DGNS.Transportation",
+    skill: "",
+    itemTypes: ["transportation"]
+  }
 };
 
 (DEGENESIS.weaponQualities = {
